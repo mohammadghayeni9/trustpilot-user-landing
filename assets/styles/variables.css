@@ -1,0 +1,20 @@
+:root {
+    /* size */
+    --max-width: 1400px;
+
+    /* colors */
+    --primary: #12A594;
+    --primary-25: #12A59440;
+    --primary-50: #12A59480;
+    --primary-75: #12A594Bf;
+
+    --secondary: #1E1E1E;
+
+    --text-primary-color: #E6E6E6;
+    --text-secondary-color: #949494;
+    --text-title-color: #FFFFFF;
+
+    --border-primary-color: #2E2E2E;
+
+    --dropdown-primary-color: #404040;
+}
