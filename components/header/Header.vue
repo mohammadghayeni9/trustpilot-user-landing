@@ -70,7 +70,7 @@
 					></router-link
 				>
 				<router-link
-					to="/blog"
+					to="/blogs"
 					target="_self"
 					class="link_internal__uk9WZ link_wrapper__cESXa styles_headerLink__QxCL9 styles_desktop__Xm1gv"
 					><span
@@ -165,47 +165,3 @@
 		</header>
 	</div>
 </template>
-
-<style>
-nav > div:last-child {
-	transform: translateX(-60%);
-}
-
-nav div:last-child div {
-	border: 1px solid #404040;
-	border-radius: 8px;
-}
-</style>
-
-<style scoped lang="scss">
-.header {
-	border: 1px solid var(--border-primary-color);
-	border-radius: 16px;
-	display: flex;
-	flex-grow: 1;
-	align-items: center;
-	justify-content: space-between;
-	padding: 4px 4px 4px 12px;
-	max-height: 84px;
-
-	&__logo {
-		min-width: 100px;
-		flex-basis: 20%;
-	}
-
-	&__links {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 40px;
-		flex-grow: 1;
-		color: var(--text-secondary-color);
-	}
-
-	&__signup {
-		flex-basis: 20%;
-		display: flex;
-		justify-content: end;
-	}
-}
-</style>
