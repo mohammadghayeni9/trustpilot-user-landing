@@ -16,9 +16,9 @@ const text2 = "آماده یک شروع هیجان انگیز و رایگان ه
 				<section class="styles_wrapper__pomKZ">
 					<div class="styles_content__i9VUq">
 						<div class="styles_line__ZSU0G"></div>
-						<a
+						<router-link
 							class="CDS_Button_button__2b0b71 CDS_Button_l__2b0b71 CDS_Button_appearance-secondary__2b0b71 styles_button__lLtG4"
-							href="writeareview"
+							to="/writereview"
 							><span
 								class="CDS_Typography_appearance-inherit__bedfe1 CDS_Typography_heading-xs__bedfe1 CDS_Typography_disableResponsiveSizing__bedfe1 CDS_Button_buttonText__2b0b71"
 								><span
@@ -36,25 +36,9 @@ const text2 = "آماده یک شروع هیجان انگیز و رایگان ه
 										>
 											یک نظر بده
 										</p>
-										<!-- <div class="styles_icon__dfuv8">
-											<svg
-												aria-hidden="true"
-												viewBox="0 0 16 16"
-												fill="inherit"
-												class="CDS_Icon_icon__70b220 CDS_Icon_action__70b220"
-												xmlns="http://www.w3.org/2000/svg"
-												width="16px"
-												height="16px"
-												role="img"
-											>
-												<path
-													d="M12.192 7.533 8.277 3.66 8.944 3 14 8l-5.056 5-.667-.66 3.915-3.873H2v-.934h10.192Z"
-												/>
-											</svg>
-										</div> -->
 									</div>
 								</div></span
-							></a
+							></router-link
 						>
 						<div class="styles_line__ZSU0G"></div>
 					</div>
@@ -89,20 +73,20 @@ const text2 = "آماده یک شروع هیجان انگیز و رایگان ه
 								confidence, and helping companies improve.
 							</p>
 							<div class="styles_aboutUsButtonContainer__elDN1">
-								<a
+								<router-link
 									class="CDS_Button_button__2b0b71 CDS_Button_m__2b0b71 CDS_Button_appearance-primary__2b0b71 styles_aboutUsButton__Lpdm8"
-									href="/about"
+									to="/about"
 									><span
 										class="CDS_Typography_appearance-inherit__bedfe1 CDS_Typography_heading-xxs__bedfe1 CDS_Typography_disableResponsiveSizing__bedfe1 CDS_Button_buttonText__2b0b71"
 										><span
 											class="CDS_Button_iconSpan__2b0b71"
 										></span
 										>What we do</span
-									></a
+									></router-link
 								>
 							</div>
 						</div>
-						<div
+						<!-- <div
 							class="styles_secondPart__tQuQm"
 							style="--animation-duration: 800ms"
 						>
@@ -184,11 +168,11 @@ const text2 = "آماده یک شروع هیجان انگیز و رایگان ه
 									></div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</section>
 				</div>
-        <homeSectionRecentReviewsSection />
-				<div
+				<homeSectionRecentReviewsSection />
+				<!-- <div
 					data-constellation-section-theme="dark-green"
 					class="CDS_SectionThemeProvider_theme-dark-green__b27a9c"
 				>
@@ -251,7 +235,7 @@ const text2 = "آماده یک شروع هیجان انگیز و رایگان ه
 							</div>
 						</div>
 					</section>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</main>

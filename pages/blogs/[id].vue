@@ -1,4 +1,18 @@
-<script setup></script>
+<script setup>
+import { API_ROUTES } from "@/constants/apiRoutes";
+const { fetchData } = useApi();
+
+const route = useRoute();
+
+const blog = ref({});
+const getBlog = async () => {
+	blog.value = await fetchData(
+		API_ROUTES.articles.articles + route.params.id + "/"
+	);
+};
+
+getBlog();
+</script>
 
 <template>
 	<main
@@ -19,37 +33,26 @@
 				>
 			</div>
 		</nav>
-		<div itemscope="" itemType="http://schema.org/BlogPosting">
-			<meta
-				itemscope=""
-				itemProp="mainEntityOfPage"
-				itemType="https://schema.org/WebPage"
-				itemID="https://.trustpilot.com/blog/trends-in-trust/romance-scams"
-			/>
+		<div>
 			<div class="Spacing-sc-11pk266-0 gQkMvi">
-				<a
+				<router-link
 					class="Links__StyledLink-sc-hi52k0-0 hQQgRH Links__Link-sc-hi52k0-1 SingleResourceView__TopPillarLink-sc-w8e2aw-0 hRKPDT jDOCWC"
-					href="/blog/trends-in-trust"
-					>Trends in Trust</a
+					to="#"
+					>{{ blog?.category?.name }}</router-link
 				>
 				<h1
 					itemProp="name headline"
-					class="Headers__Heading-sc-1erae96-0 Headers__H1-sc-1erae96-2 SingleResourceView__Title-sc-w8e2aw-1 gKXYKr hfVHek hrcOuu"
+					class="Headers__Heading-sc-1erae96-0 Headers__H1-sc-1erae96-2 SingleResourceView__Title-sc-w8e2aw-1 gKXYKr hfVHek hrcOuu !text-5xl font-bold text-center mb-8 mt-0 mx-auto"
 				>
-					Romance scams: Spot the signs
+					{{ blog?.title }}
 				</h1>
 				<div
 					itemProp="dateCreated datePublished"
 					class="SingleResourceView__PublishedDate-sc-w8e2aw-2 lnMZRc"
 				>
-					Wednesday, January 17, 2024
+					{{ blog?.updated_at }}
 				</div>
-				<meta itemProp="dateModified" content="2024-02-07" />
 			</div>
-			<meta
-				itemProp="image"
-				content="https://images.ctfassets.net/b7g9mrbfayuu/7oph9H4ek8eGAnoJdYMM5S/8ebddaf7f170d5488ad54549f161f5ab/romance-scams.jpg"
-			/>
 			<div class="SingleResourceView__ArticleContent-sc-w8e2aw-4 fmQqAW">
 				<div class="Spacing-sc-11pk266-0 kTQFfb">
 					<div
@@ -78,25 +81,25 @@
 									right: 0;
 									bottom: 0;
 									color: transparent;
+									object-fit: cover;
 								"
 								sizes="50vw"
-								srcSet="https://images.ctfassets.net/b7g9mrbfayuu/7oph9H4ek8eGAnoJdYMM5S/8ebddaf7f170d5488ad54549f161f5ab/romance-scams.jpg?q=80&amp;w=384&amp;fm=webp 384w, https://images.ctfassets.net/b7g9mrbfayuu/7oph9H4ek8eGAnoJdYMM5S/8ebddaf7f170d5488ad54549f161f5ab/romance-scams.jpg?q=80&amp;w=640&amp;fm=webp 640w, https://images.ctfassets.net/b7g9mrbfayuu/7oph9H4ek8eGAnoJdYMM5S/8ebddaf7f170d5488ad54549f161f5ab/romance-scams.jpg?q=80&amp;w=750&amp;fm=webp 750w, https://images.ctfassets.net/b7g9mrbfayuu/7oph9H4ek8eGAnoJdYMM5S/8ebddaf7f170d5488ad54549f161f5ab/romance-scams.jpg?q=80&amp;w=828&amp;fm=webp 828w, https://images.ctfassets.net/b7g9mrbfayuu/7oph9H4ek8eGAnoJdYMM5S/8ebddaf7f170d5488ad54549f161f5ab/romance-scams.jpg?q=80&amp;w=1080&amp;fm=webp 1080w, https://images.ctfassets.net/b7g9mrbfayuu/7oph9H4ek8eGAnoJdYMM5S/8ebddaf7f170d5488ad54549f161f5ab/romance-scams.jpg?q=80&amp;w=1200&amp;fm=webp 1200w, https://images.ctfassets.net/b7g9mrbfayuu/7oph9H4ek8eGAnoJdYMM5S/8ebddaf7f170d5488ad54549f161f5ab/romance-scams.jpg?q=80&amp;w=1920&amp;fm=webp 1920w, https://images.ctfassets.net/b7g9mrbfayuu/7oph9H4ek8eGAnoJdYMM5S/8ebddaf7f170d5488ad54549f161f5ab/romance-scams.jpg?q=80&amp;w=2048&amp;fm=webp 2048w, https://images.ctfassets.net/b7g9mrbfayuu/7oph9H4ek8eGAnoJdYMM5S/8ebddaf7f170d5488ad54549f161f5ab/romance-scams.jpg?q=80&amp;w=3840&amp;fm=webp 3840w"
-								src="https://images.ctfassets.net/b7g9mrbfayuu/7oph9H4ek8eGAnoJdYMM5S/8ebddaf7f170d5488ad54549f161f5ab/romance-scams.jpg?q=80&amp;w=3840&amp;fm=webp"
+								:src="API_ROUTES.baseUrl + blog?.image"
 							/>
 						</div>
 					</div>
 					<div
 						class="from-markdown SingleResourceView__Introduction-sc-w8e2aw-3 bkyjuy"
 					>
-						<p class="Markdown__Paragraph-sc-wk78ky-0 hvhTD">
-							Let’s face it: dating is hard. Finding the right
-							person takes time, effort and a whole load of trust.
-							Throw in the added online element of finding a
-							partner and things get even more complicated.
+						<p
+							class="Markdown__Paragraph-sc-wk78ky-0 hvhTD !text-2xl"
+						>
+							{{ blog?.summary }}
 						</p>
 					</div>
 					<div
 						class="RichText__RichtextWrapper-sc-lgc1a-5 cKNMGu"
+						v-html="blog?.text"
 					></div>
 				</div>
 				<div class="Spacing-sc-11pk266-0 fWOdXJ">
@@ -104,10 +107,7 @@
 						class="SingleResourceView__ResourceFooter-sc-w8e2aw-6 fWIZrr"
 					>
 						<div
-							itemscope=""
-							itemProp="author"
 							class="Author__Wrapper-sc-1ep02bo-0 dLxPXm"
-							itemType="https://schema.org/Person"
 						>
 							<div
 								class="Author__SectionName-sc-1ep02bo-2 exWuZb"
@@ -119,15 +119,9 @@
 									class="Author__Image-sc-1ep02bo-1 cHhCTI mr-0 ml-1"
 								>
 									<picture
-										><source
-											type="image/webp"
-											srcSet="https://images.ctfassets.net/b7g9mrbfayuu/2wLrYehNF7QTlOQ6uSRzSb/300b0877920734553515f7b842f8a305/Carolyn_McGinn.jpg?w=120&amp;fm=webp&amp;q=80" />
+										>
 										<img
-											alt="Carolyn McGinn"
-											loading="lazy"
-											src="https://images.ctfassets.net/b7g9mrbfayuu/2wLrYehNF7QTlOQ6uSRzSb/300b0877920734553515f7b842f8a305/Carolyn_McGinn.jpg?w=120&amp;fm=jpg&amp;q=80"
-											itemProp="image"
-											title="Carolyn McGinn - Consumer Content Marketing Manager"
+											:src="API_ROUTES.baseUrl + blog?.author?.picture"
 									/></picture>
 								</div>
 								<div
@@ -135,16 +129,17 @@
 								>
 									<div
 										itemProp="name"
-										class="Author__Name-sc-1ep02bo-4 eIjpPE text-lg"
+										class="Author__Name-sc-1ep02bo-4 eIjpPE text-lg flex gap-2"
 									>
-										Carolyn McGinn
+										<span>{{ blog?.author?.first_name }}</span>
+										<span>{{ blog?.author?.last_name }}</span>
 									</div>
-									<div
+									<!-- <div
 										itemProp="jobTitle"
 										class="Author__Title-sc-1ep02bo-5 jYfPKU !text-base"
 									>
 										Consumer Content Marketing Manager
-									</div>
+									</div> -->
 								</div>
 							</div>
 						</div>
@@ -159,10 +154,7 @@
 		</h3>
 		<div class="Spacing-sc-11pk266-0 dWqNns">
 			<div class="ResourceList__Wrapper-sc-hakffs-0 eogOz">
-				<blogsBlogCard />
-				<blogsBlogCard />
-				<blogsBlogCard />
-				<blogsBlogCard />
+				<!-- <blogsBlogCard /> -->
 			</div>
 		</div>
 	</main>

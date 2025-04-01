@@ -93,7 +93,7 @@ getCategories();
 			<div
 				class="ResourceList__Wrapper-sc-hakffs-0 eogOz PaginatedResourceList__SpacedResourceList-sc-1sjdi1d-1 hGPeRk mx-auto"
 			>
-				<blogsBlogCard v-for="blog in blogs" :to="blog?.id" />
+				<blogsBlogCard v-for="blog in blogs?.results" :to="blog?.id" :data="blog" />
 			</div>
 		</div>
 	</main>

@@ -1,3 +1,17 @@
+@font-face {
+	font-family: shabnam;
+	src: url("~/assets/fonts/Shabnam.ttf") format("truetype");
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	position: relative;
+	font-family: shabnam !important;
+}
+
 .apple-button_button__ClT1a {
 	height: 40px;
 	width: 320px;
@@ -8001,8 +8015,4 @@
 	background-color: var(--CDS-color-base-trustpilot-brand-neutral-white);
 	display: flex;
 	flex-direction: column;
-}
-
-body {
-	font-family: shabnam !important;
 }

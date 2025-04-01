@@ -8,8 +8,8 @@
 	>
 		<header class="styles_header__7_z6J styles_isFixed__grz31">
 			<div class="styles_headerInner__S6auq" data-navigation="true">
-				<a
-					href="/"
+				<router-link
+					to="/"
 					name="company-logo"
 					target="_self"
 					class="link_internal__uk9WZ link_wrapper__cESXa styles_logo__Rj9pg"
@@ -18,7 +18,7 @@
 						alt="Trustpilot reviews"
 						width="140"
 						src="https://cdn.trustpilot.net/brand-assets/4.3.0/logo-white.svg"
-				/></a>
+				/></router-link>
 				<div class="styles_midSection__b8srC"></div>
 				<button
 					class="search-button_wrapper__EBy_J styles_button__RwBsa styles_mobile__5QeOq"
@@ -78,7 +78,7 @@
 						>مقالات</span
 					></router-link
 				><router-link
-					to="/users/connect?redirect=&amp;source_cta=header"
+					to="#"
 					rel="nofollow"
 					name="navigation-login-desktop"
 					target="_self"
@@ -88,14 +88,14 @@
 						class="typography_body-m__M8pz1 typography_appearance-default__ISosD styles_headerLinkInner__YX0HZ"
 						>ورود</span
 					></router-link
-				><a
-					href="https://business.trustpilot.com"
+				><router-link
+					to="#"
 					target="_self"
 					class="link_internal__uk9WZ button_button__nt_68 button_m__zr_kC button_appearance-primary__nW_qu link_button__plsUx styles_desktop__Xm1gv"
 					><span
 						class="typography_heading-xxs__Fljtr typography_appearance-inherit__DjRrw typography_disableResponsiveSizing__yPCUp"
 						>برای شرکت‌ها</span
-					></a
+					></router-link
 				>
 			</div>
 			<div
@@ -110,21 +110,21 @@
 				<div class="styles_content__d_O4f">
 					<div class="styles_wrapper__bf0Pk">
 						<div class="styles_inner__ihGP8" data-navigation="true">
-							<a
-								href="https://business.trustpilot.com"
+							<router-link
+								to="https://business.trustpilot.com"
 								target="_self"
 								class="link_internal__uk9WZ button_button__nt_68 button_m__zr_kC button_appearance-outline__F5Yx7 link_button__plsUx"
 								><span
 									class="typography_heading-xxs__Fljtr typography_appearance-inherit__DjRrw typography_disableResponsiveSizing__yPCUp"
 									>For businesses</span
-								></a
+								></router-link
 							>
 							<hr
 								class="divider_divider__0_42s styles_divider__hyfK4 divider_appearance-medium__3mpsB"
 							/>
 							<div class="styles_linksWrapper__ZFKaB">
-								<a
-									href="/users/connect?redirect=&amp;source_cta=header"
+								<router-link
+									to="#"
 									rel="nofollow"
 									target="_self"
 									class="link_internal__uk9WZ typography_heading-s__OrD2y typography_appearance-action__YpDEl link_link__Wnd07 link_underlined__GbnWl"
@@ -140,22 +140,22 @@
 										>
 											<path
 												d="M10.192 5.033 6.277 1.16 6.944.5 12 5.5l-5.056 5-.667-.66 3.915-3.873H0v-.934h10.192Z"
-											/></svg></span></a
-								><a
-									href="/writeareview"
+											/></svg></span></router-link
+								><router-link
+									to="/writereview"
 									target="_self"
 									class="link_internal__uk9WZ typography_heading-s__OrD2y typography_appearance-default__ISosD link_link__Wnd07 link_notUnderlined__A4AJs"
-									>Write a review</a
-								><a
-									href="/categories"
+									>Write a review</router-link
+								><router-link
+									to="/categories"
 									target="_self"
 									class="link_internal__uk9WZ typography_heading-s__OrD2y typography_appearance-default__ISosD link_link__Wnd07 link_notUnderlined__A4AJs"
-									>Categories</a
-								><a
-									href="/blog"
+									>Categories</router-link
+								><router-link
+									to="/blogs"
 									target="_self"
 									class="link_internal__uk9WZ typography_heading-s__OrD2y typography_appearance-default__ISosD link_link__Wnd07 link_notUnderlined__A4AJs"
-									>Blog</a
+									>Blog</router-link
 								>
 							</div>
 						</div>
